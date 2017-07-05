@@ -4,6 +4,7 @@ read project_domain
 echo "Ingresa el email del contacto técnico"
 read email
 echo "Creando virtual hosts..."
+touch $project_domain.conf
 sudo cat "<VirtualHost *:80>
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
@@ -12,6 +13,6 @@ sudo cat "<VirtualHost *:80>
 		DocumentRoot /var/www/html/$project_domain/public
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>"
+</VirtualHost>" > $project_domain.conf
 sudo a2ensite $project_domain.conf
 sudo service apache2 reload
