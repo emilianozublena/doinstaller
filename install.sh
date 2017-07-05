@@ -51,5 +51,7 @@ then
 	echo "Ingresa la secret key del client 2"
 	read password_secret
 	sed -i -- "s/{password_secret}/$password_secret/g" .env
+	sudo chown www-data:www-data storage/oauth-*.key
+	sudo chmod 600 storage/oauth-*.key
 fi
 echo "Instalado, recorda ejecutar virtual_hosts.sh"
