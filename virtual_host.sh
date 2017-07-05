@@ -4,7 +4,7 @@ read project_domain
 echo "Ingresa el email del contacto técnico"
 read email
 echo "Creando virtual hosts..."
-cat "<VirtualHost *:80>
+sudo cat "<VirtualHost *:80>
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
         ServerAdmin $email
